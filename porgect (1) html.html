@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>منصة التداول  </title>
+</head>
+<body>
+    
+    <button onclick="toggleLanguage()">🌐 English / عربي</button>
+
+<center>
+    <h1>📊 منصة التداول التعليمية</h1>
+    <h2>مشروع HTML</h2>
+    
+    <hr width="80%">
+    
+    <p>
+        <strong>روابط التواصل:</strong><br>
+        <a href="https://www.linkedin.com/in/abdalnoor-rabaia-558201304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">LinkedIn</a> |
+        <a href="https://www.instagram.com/abdalnoor_rabaia?igsh=bnVheTh6cXN1bjJz&utm_source=qr">Instagram</a> |
+        <a href="https://github.com/abdalnoor-rabaia">GitHub</a>
+    </p>
+    
+    <hr width="80%">
+</center>
+
+<h3>🏆 معلومات المشروع:</h3>
+<p>هذا مشروع تعليمي تم تطويره بعد إكمال كورس </p>
+<p>HTML</p>
+<p><strong>التاريخ:</strong> [1/2/2026]</p>
+
+<hr>
+
+<h3>📝 إنشاء حساب جديد</h3>
+<form action="#" method="post">
+    <p><strong>الاسم الكامل:</strong> <span style="color:red">*</span></p>
+    <input type="text" name="fullname" size="40" required 
+           minlength="3" maxlength="50"
+           placeholder="ادخل اسمك الكامل">
+    
+    <p> <strong> البريد الإلكتروني:</strong> <span style="color:red">*</span></p>
+    <input type="email" name="email" size="40" required
+           placeholder="example@email.com">
+    
+    <p><strong>كلمة المرور:</strong> <span style="color:red">*</span></p>
+    <input type="password" name="password" size="40" required
+           minlength="8" 
+           placeholder="ادخل احرف اعلا من 8">
+    
+    <p><strong>رقم الهاتف:</strong></p>
+    <input type="tel" name="phone" size="40"
+           pattern="[0-9]{10}"
+           placeholder="07********">
+    
+    <p><strong>نوع الحساب:</strong> <span style="color:red">*</span></p>
+    <select name="account_type" required>
+        <option value="">-- اختر نوع الحساب --</option>
+        <option value="personal">حساب شخصي</option>
+        <option value="demo">حساب تجريبي</option>
+        <option value="islamic">حساب إسلامي</option>
+    </select>
+    
+    <p><strong>تاريخ الميلاد:</strong> <span style="color:red">*</span></p>
+    <input type="date" name="birthdate" required
+           min="1950-01-01" max="2005-12-31">
+    
+    <p><strong>المبلغ الأولي ($):</strong> <span style="color:red">*</span></p>
+    <input type="number" name="amount" value="1000" 
+           min="100" max="100000" step="100" required>
+    
+    <p>
+        <input type="checkbox" name="terms" required>
+        أوافق على الشروط والأحكام <span style="color:red">*</span>
+    </p>
+    
+    <p>
+        <button type="submit">إنشاء الحساب</button>
+        <button type="reset">مسح البيانات</button>
+    </p>
+</form>
+
+<hr>
+
+
+<h3>📈 فتح صفقة جديدة</h3>
+<form action="#" method="post">
+    <p><strong>رقم الحساب:</strong> <span style="color:red">*</span></p>
+    <input type="text" name="account_number" size="40" required
+           pattern="ACC-[0-9]{6}"
+           placeholder="ACC-123456">
+    
+    <p><strong>اختر الاصل:</strong> <span style="color:red">*</span></p>
+    <select name="asset" required>
+        <option value="">-- اختر الاصل --</option>
+        <option value="BTC">Bitcoin (BTC)</option>
+        <option value="ETH">Ethereum (ETH)</option>
+        <option value="GOLD">Gold (XAU)</option>
+        <option value="OIL">Oil (CL)</option>
+    </select>
+    
+    <p><strong>نوع الصفقة:</strong> <span style="color:red">*</span></p>
+    <input type="radio" name="trade_type" value="buy" required> شراء
+    <input type="radio" name="trade_type" value="sell"> بيع
+    
+    <p><strong>المبلغ ($):</strong> <span style="color:red">*</span></p>
+    <input type="number" name="amount" value="1000" min="10" required>
+    
+    <p><strong>سعر الدخول:</strong> <span style="color:red">*</span></p>
+    <input type="number" name="entry_price" step="0.01" required
+           placeholder="42.50">
+    
+    <p><strong>هدف الربح:</strong> <span style="color:red">*</span></p>
+    <input type="number" name="take_profit" step="0.01" required>
+    
+    <p><strong>وقف الخسارة:</strong> <span style="color:red">*</span></p>
+    <input type="number" name="stop_loss" step="0.01" required>
+    
+    <p><strong>تاريخ الانتهاء:</strong> <span style="color:red">*</span></p>
+    <input type="date" name="expiry_date" required
+           min="2024-01-01">
+    
+    <p><strong>ملاحظات:</strong></p>
+    <textarea name="notes" rows="3" cols="50"
+              placeholder="اضف ملاحظاتك هنا..."></textarea>
+    
+    <p>
+        <button type="submit">فتح الصفقة</button>
+        <button type="reset">مسح البيانات</button>
+    </p>
+</form>
+
+<hr>
+
+<h3>📋 سجل الصفقات</h3>
+<table border="1" width="100%">
+    <thead>
+        <tr>
+            <th>رقم الصفقة</th>
+            <th>الأصل</th>
+            <th>النوع</th>
+            <th>المبلغ</th>
+            <th>الحالة</th>
+            <th>التاريخ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>TR000001</td>
+            <td>BTC</td>
+            <td>شراء</td>
+            <td>$1,000</td>
+            <td>🟢 نشطة</td>
+            <td>2024-01-20</td>
+        </tr>
+        <tr>
+            <td>TR000002</td>
+            <td>ETH</td>
+            <td>بيع</td>
+            <td>$500</td>
+            <td>🔴 مغلقة</td>
+            <td>2024-01-19</td>
+        </tr>
+        <tr>
+            <td>TR000003</td>
+            <td>GOLD</td>
+            <td>شراء</td>
+            <td>$2,000</td>
+            <td>🟢 نشطة</td>
+            <td>2024-01-18</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<
+<h3>💰 ايداع الاموال</h3>
+<form action="#" method="post">
+    <p><strong>طريقة الدفع:</strong> <span style="color:red">*</span></p>
+    <select name="payment_method" required>
+        <option value="">-- اختر طريقة الدفع --</option>
+        <option value="visa">بطاقة فيزا</option>
+        <option value="mastercard">بطاقة ماستركارد</option>
+        <option value="bank">تحويل بنكي</option>
+        <option value="crypto">عملات رقمية</option>
+    </select>
+    
+    <p><strong>المبلغ ($):</strong> <span style="color:red">*</span></p>
+    <input type="number" name="deposit_amount" min="10" required
+           placeholder="500">
+    
+    <p><strong>رقم البطاقة:</strong></p>
+    <input type="text" name="card_number" 
+           pattern="[0-9]{16}"
+           placeholder="1234567812345678">
+    
+    <p><strong>تاريخ الانتهاء:</strong></p>
+    <input type="text" name="expiry_date" 
+           pattern="(0[1-9]|1[0-2])\/[0-9]{2}"
+           placeholder="MM/YY">
+    
+    <p><strong>CVV:</strong></p>
+    <input type="password" name="cvv" 
+           pattern="[0-9]{3}"
+           placeholder="123">
+    
+    <p>
+        <button type="submit">تاكيد الايداع</button>
+    </p>
+</form>
+
+<hr>
+
+
+<center>
+    <h3>📞 تواصل معي</h3>
+    <p>
+        📧 abdalnoorraed04@gmail.com<br>
+        📱 0785023750
+    </p>
+    
+    <p>
+        <strong>تابعني على:</strong><br>
+        <a href="https://www.linkedin.com/in/abdalnoor-rabaia-558201304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">LinkedIn</a> |
+        <a href="https://www.instagram.com/abdalnoor_rabaia?igsh=bnVheTh6cXN1bjJz&utm_source=qr">Instagram</a> |
+        <a href="https://github.com/abdalnoor-rabaia">GitHub</a>
+    </p>
+    
+    <p>
+        <strong>مشروع تعليمي  </strong><br>
+       عبد النور رائد <br>
+    
+    </p>
+    
+    <p>
+        <em>⚠️ هذا مشروع تعليمي وليس منصة تداول حقيقية</em><br>
+    </p>
+</center>
+ 
+<script>
+let isArabic = true;
+
+function toggleLanguage() {
+    if (isArabic) {
+        document.body.innerHTML = document.body.innerHTML
+        .replace("منصة التداول التعليمية","Educational Trading Platform")
+        .replace("مشروع HTML","HTML Project")
+        .replace("معلومات المشروع","Project Info")
+        .replace("إنشاء حساب جديد","Create Account")
+        .replace("الاسم الكامل","Full Name")
+        .replace("البريد الإلكتروني","Email")
+        .replace("كلمة المرور","Password")
+        .replace("فتح صفقة جديدة","Open Trade")
+        .replace("اختر الأصل","Select Asset")
+        .replace("سجل الصفقات","Trade History")
+        .replace("تواصل معي","Contact Me");
+        isArabic = false;
+    } else {
+        location.reload();
+    }
+}
+</script>
+
+</body>
+</html>
